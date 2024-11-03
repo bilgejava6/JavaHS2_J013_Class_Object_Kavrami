@@ -10,6 +10,7 @@ public class MusteriIslemleri {
      * Müşteri Arama
      *
      */
+    Veriler veriler = new Veriler();
 
     public void init(){
         int secim;
@@ -44,7 +45,7 @@ public class MusteriIslemleri {
     }
 
     public void musteriListele(){
-        Veriler veriler = new Veriler();
+
         System.out.println("""
                 **** Müşteri Listesi ****
                 """);
@@ -57,7 +58,7 @@ public class MusteriIslemleri {
     }
 
     public void musteriBorcListesi(){
-        Veriler veriler = new Veriler();
+
         System.out.println("""
                 **** Müşteri Borç Listesi ****
                 """);
@@ -75,7 +76,6 @@ public class MusteriIslemleri {
         int index = new Scanner(System.in).nextInt();
         System.out.print("yapılan ödeme tutarı.....: ");
         double odemeTutari = new Scanner(System.in).nextDouble();
-        Veriler veriler = new Veriler();
         veriler.odemeListesi[index] += odemeTutari; // ödenmiş bilginin üzerine ödeme tutarını ekliyorum.
         System.out.println("""
                 ödeme başarı ile alınmıştır.
@@ -84,7 +84,6 @@ public class MusteriIslemleri {
     }
 
     public void musteriArama(){
-        Veriler veriler = new Veriler();
         System.out.print("Aranan müşteri.....: "); // Ahmet TAŞ
         String arama = new Scanner(System.in).nextLine();
         int bulunanIndex = -1;
