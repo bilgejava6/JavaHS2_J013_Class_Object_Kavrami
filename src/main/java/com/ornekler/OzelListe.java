@@ -14,7 +14,43 @@ public class OzelListe {
      */
 
     public void remove(int removeIndex){
+        if(removeIndex<0 || removeIndex>size) return;
+        size--;
+        currentIndex--;
+        if(size==0){
+            list = null;
+            currentIndex= -1;
+            return;
+        }
+        String[] tmp = list;// eski listem
+        list = new String[size]; // yeni içi boş listem
+        for(int i=0; i<tmp.length;i++){
+            if(i<removeIndex) list[i] = tmp[i];
+            else if(i>removeIndex) list[i-1]= tmp[i];
+        }
+    }
 
+    public void remove(String  removeVAlue){
+        int findIndex = -1;
+        for(int i=0; i<size; i++){
+            if(list[i].equals(removeVAlue)){
+                findIndex = i;
+            }
+        }
+        if(findIndex!=-1)
+            remove(findIndex);
+//        String[] tmp = list;// eski listem
+//        list = new String[size-1]; // yeni içi boş listem
+//        int t = 0;
+//        for(int i=0; i<tmp.length;i++){
+//            if(tmp[i].equals(removeVAlue)){
+//                t=1;
+//            }else{
+//                list[i-t] = tmp[i];
+//            }
+//        }
+//        size--;
+//        currentIndex--;
     }
 
     public void update(int index, String newValue) {
