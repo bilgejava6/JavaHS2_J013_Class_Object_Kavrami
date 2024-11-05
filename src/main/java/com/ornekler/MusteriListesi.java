@@ -9,7 +9,7 @@ public class MusteriListesi {
         size = diziBoyutu;
     }
 
-    public boolean kontrolEt(){
+    private boolean kontrolEt(){
         if(musteriler==null){
             System.out.println("Lütfen öncelikle diziyi başlatın.");
             return true;
